@@ -14,8 +14,8 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -79,6 +79,10 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
         ),
+        'J' => 
+        array (
+            'JeroenNoten\\LaravelAdminLte\\' => 28,
+        ),
         'I' => 
         array (
             'Illuminate\\' => 11,
@@ -114,8 +118,8 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -233,6 +237,10 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
         ),
+        'JeroenNoten\\LaravelAdminLte\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
+        ),
         'Illuminate\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
@@ -332,6 +340,8 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         'App\\Http\\Middleware\\TrimStrings' => __DIR__ . '/../..' . '/app/Http/Middleware/TrimStrings.php',
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Models\\Balance' => __DIR__ . '/../..' . '/app/Models/Balance.php',
+        'App\\Models\\Historic' => __DIR__ . '/../..' . '/app/Models/Historic.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -1738,6 +1748,20 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'JeroenNoten\\LaravelAdminLte\\AdminLte' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/AdminLte.php',
+        'JeroenNoten\\LaravelAdminLte\\Console\\AdminLteMakeCommand' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Console/AdminLteMakeCommand.php',
+        'JeroenNoten\\LaravelAdminLte\\Console\\MakeAdminLteCommand' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Console/MakeAdminLteCommand.php',
+        'JeroenNoten\\LaravelAdminLte\\Events\\BuildingMenu' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Events/BuildingMenu.php',
+        'JeroenNoten\\LaravelAdminLte\\Http\\ViewComposers\\AdminLteComposer' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Http/ViewComposers/AdminLteComposer.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\ActiveChecker' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/ActiveChecker.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Builder' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Builder.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\ActiveFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/ActiveFilter.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\ClassesFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/ClassesFilter.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\FilterInterface' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/FilterInterface.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\GateFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/GateFilter.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\HrefFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/HrefFilter.php',
+        'JeroenNoten\\LaravelAdminLte\\Menu\\Filters\\SubmenuFilter' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/Menu/Filters/SubmenuFilter.php',
+        'JeroenNoten\\LaravelAdminLte\\ServiceProvider' => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src/ServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',
@@ -3519,6 +3543,7 @@ class ComposerStaticInit44735b8e89bd90bc6ae28c0876cf0220
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Property\\Property' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Property/Property.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Processor' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Processor.php',
         'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => __DIR__ . '/..' . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
+        'UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeds/UsersTableSeeder.php',
         'Webmozart\\Assert\\Assert' => __DIR__ . '/..' . '/webmozart/assert/src/Assert.php',
         'Whoops\\Exception\\ErrorException' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/ErrorException.php',
         'Whoops\\Exception\\Formatter' => __DIR__ . '/..' . '/filp/whoops/src/Whoops/Exception/Formatter.php',
