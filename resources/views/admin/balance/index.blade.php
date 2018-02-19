@@ -14,7 +14,7 @@
 @section('content')
     <div class="box">
         <div class="box-header">
-            <a href="" class="btn btn-primary"><i class="ion ion-cash"></i>&nbsp;Recarregar</a>
+            <a href="{{route('balance.deposit')}}" class="btn btn-primary"><i class="ion ion-cash"></i>&nbsp;Recarregar</a>
             <a href="" class="btn btn-danger"><i class="fa fa-fw fa-credit-card-alt"></i>&nbsp;Sacar</a>
         </div>
         <div class="box-body">
@@ -22,12 +22,9 @@
                 <!-- small box -->
                 <div class="small-box bg-green">
                     <div class="inner">
-                        <h3><sup style="font-size: 20px">R$</sup>&nbsp;53,00</h3>
+                        <h3><sup style="font-size: 20px">R$</sup>&nbsp;{{ number_format($amount, 2, ',', '') }}</h3>
 
                         <p>Saldo dispon&iacute;vel</p>
-                    </div>
-                    <div class="icon">
-                        <i class="ion ion-cash"></i>
                     </div>
                     <a href="#" class="small-box-footer">Hist&oacute;rico <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
