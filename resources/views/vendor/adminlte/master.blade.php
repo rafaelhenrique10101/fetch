@@ -15,33 +15,30 @@
     <!-- Google Font -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+		  
+	
 </head>
-<body class="hold-transition @yield('body_class')">
+<body>
 
 @yield('body')
+	
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>	
+	<script src="{{ asset('js/moment.min.js') }}"></script>
+	<script src="{{ asset('js/fullcalendar.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
+	<script src="{{ asset('js/salvattore.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.flot.js') }}"></script>
+	<script src="{{ asset('js/jquery.flot.resize.js') }}"></script>
+	<script src="{{ asset('js/curvedLines.js') }}"></script>	
 
-<script src="{{ asset('js/page-loader.min.js') }}"></script>
-<script src="{{ asset('js/jquery.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
-<script src="{{ asset('js/bootstrap-notify.min.js') }}"></script>
-<script src="{{ asset('js/moment.min.js') }}"></script>
-<script src="{{ asset('js/fullcalendar.min.js') }}"></script>
-<script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
-<script src="{{ asset('js/salvattore.min.js') }}"></script>
-<script src="{{ asset('js/jquery.flot.js') }}"></script>
-<script src="{{ asset('js/jquery.flot.resize.js') }}"></script>
-<script src="{{ asset('js/curvedLines.js') }}"></script>
-<script src="{{ asset('js/jquery.sparkline.min.js') }}"></script>
-<script src="{{ asset('js/jquery.easypiechart.min.js') }}"></script>
-
-<script src="{{ asset('js/curved-line.js') }}"></script>
-<script src="{{ asset('js/line.js') }}"></script>
-<script src="{{ asset('js/easy-pie-charts.js') }}"></script>
-<script src="{{ asset('js/misc.js') }}"></script>
-<script src="{{ asset('js/sparkline-charts.js') }}"></script>
-<script src="{{ asset('js/calendar.js') }}"></script>
-<script src="{{ asset('js/app.min.js') }}"></script>
+	<script src="{{ asset('js/curved-line.js') }}"></script>
+	<script src="{{ asset('js/line.js') }}"></script>
+	<script src="{{ asset('js/easy-pie-charts.js') }}"></script>
+	<script src="{{ asset('js/misc.js') }}"></script>	
+	<script src="{{ asset('js/calendar.js') }}"></script>
+	<script src="{{ asset('js/app.min.js') }}"></script>
 
 </body>
 </html>

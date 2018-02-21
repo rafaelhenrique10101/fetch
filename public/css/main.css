@@ -985,7 +985,7 @@ body{
     font-size:13px;
     line-height:1.42857143;
     color:#8a9ba1;
-    background-color:#22313a
+    background-color: #29292d;
 }
 button,input,select,textarea{
     font-family:inherit;
@@ -6410,15 +6410,17 @@ html{
 }
 body:before{
     content:'';
-    height:266px;
+    /* height:266px; */
     width:100%;
     position:absolute;
     left:0;
     top:0;
-    background-color:#1e2a31
+    background-color:#1e2a31;
 }
 #header,#main,.top-search{
-    position:relative
+    position: a;
+    top: 0;
+    height: 100%;
 }
 @media (max-width:767px){
     body:before{
@@ -6427,7 +6429,7 @@ body:before{
 }
 @media screen and (-webkit-min-device-pixel-ratio:0){
     body:before{
-        height:265px
+        /* height:265px */
     }
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width:767px){
@@ -6694,11 +6696,12 @@ p{
 }
 #header{
     user-select:none;
-    padding: 20px 40px 20px 0px;
-    margin-bottom:20px;
+    padding: 0px 40px;
     z-index:10;
     width: calc(100% - 270px);
-    float: right;
+    float: left;
+    line-height: 80px;
+    height: 80px;
 }
 #header:after,#header:before{
     content:" ";
@@ -6791,9 +6794,9 @@ p{
     padding:10px 20px 10px 50px;
     border-radius:2px;
     width:100%;
-    background-color:#2b3942;
+    background-color: rgba(255, 255, 255, 0.05);
     font-size:15px;
-    color:#22313a
+    color:#22313a;
 }
 .top-search__input::-moz-placeholder{
     color:#b4bfc3;
@@ -6996,9 +6999,9 @@ p{
 @media (min-width:1280px){
     #navigation{
         width:270px;
-        position:absolute;
+        position: fixed;
         height:100%;
-        top:0
+        top:0;
     }
     .navigation__header{
         display:none
@@ -7249,9 +7252,9 @@ p{
 }
 .card{
     position:relative;
-    background:#2b3942;
+    background: #2c2d31;
     margin-bottom:30px;
-    border-radius:2px
+    border-radius:2px;
 }
 .card__header--img,.widget-weather__icon{
     background-repeat:no-repeat;
