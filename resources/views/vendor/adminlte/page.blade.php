@@ -1,137 +1,225 @@
 @extends('adminlte::master')
 
-@section('adminlte_css')
-    <link rel="stylesheet"
-          href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
-    @stack('css')
-    @yield('css')
-@stop
-
-@section('body_class', 'skin-' . config('adminlte.skin', 'blue') . ' sidebar-mini ' . (config('adminlte.layout') ? [
-    'boxed' => 'layout-boxed',
-    'fixed' => 'fixed',
-    'top-nav' => 'layout-top-nav'
-][config('adminlte.layout')] : '') . (config('adminlte.collapse_sidebar') ? ' sidebar-collapse ' : ''))
-
 @section('body')
     <div class="wrapper">
 
         <!-- Main Header -->
-        <header class="main-header">
-            @if(config('adminlte.layout') == 'top-nav')
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="navbar-brand">
-                            {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
-                        </a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
+        <header id="header">
+            <ul class="top-menu">
+                <li class="top-menu__trigger hidden-lg hidden-md">
+                    <a href=""><i class="zmdi zmdi-search"></i></a>
+                </li>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            @each('adminlte::partials.menu-item-top-nav', $adminlte->menu(), 'item')
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-            @else
-            <!-- Logo -->
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
-            </a>
-
-            <!-- Header Navbar -->
-            <nav class="navbar navbar-static-top" role="navigation">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">{{ trans('adminlte::adminlte.toggle_navigation') }}</span>
-                </a>
-            @endif
-                <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
-
-                    <ul class="nav navbar-nav">
+                <li class="top-menu__apps dropdown hidden-xs hidden-sm">
+                    <a data-toggle="dropdown" href="">
+                        <i class="zmdi zmdi-apps"></i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
                         <li>
-                            @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))
-                                <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}">
-                                    <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
-                                </a>
-                            @else
-                                <a href="#"
-                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                >
-                                    <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
-                                </a>
-                                <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
-                                    @if(config('adminlte.logout_method'))
-                                        {{ method_field(config('adminlte.logout_method')) }}
-                                    @endif
-                                    {{ csrf_field() }}
-                                </form>
-                            @endif
+                            <a href="">
+                                <i class="zmdi zmdi-calendar"></i>
+                                <small>Calendar</small>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-file-text"></i>
+                                <small>Files</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-email"></i>
+                                <small>Mail</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-trending-up"></i>
+                                <small>Analytics</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-view-headline"></i>
+                                <small>News</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="zmdi zmdi-image"></i>
+                                <small>Gallery</small>
+                            </a>
                         </li>
                     </ul>
-                </div>
-                @if(config('adminlte.layout') == 'top-nav')
-                </div>
-                @endif
-            </nav>
+                </li>
+                <li class="dropdown hidden-xs">
+                    <a data-toggle="dropdown" href=""><i class="zmdi zmdi-more-vert"></i></a>
+                    <ul class="dropdown-menu dropdown-menu--icon pull-right">
+                        <li class="hidden-xs">
+                            <a data-mae-action="fullscreen" href=""><i class="zmdi zmdi-fullscreen"></i> Toggle Fullscreen</a>
+                        </li>
+                        <li>
+                            <a data-mae-action="clear-localstorage" href=""><i class="zmdi zmdi-delete"></i> Clear Local Storage</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-face"></i> Privacy Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Other Settings</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="top-menu__alerts" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
+                    <a href=""><i class="zmdi zmdi-notifications"></i></a>
+                </li>
+                <li class="top-menu__profile dropdown">
+                    <a data-toggle="dropdown" href="">
+                        <img src="demo/img/profile-pics/1.jpg" alt="">
+                    </a>
+
+                    <ul class="dropdown-menu pull-right dropdown-menu--icon">
+                        <li>
+                            <a href="profile-about.html"><i class="zmdi zmdi-account"></i> View Profile</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-input-antenna"></i> Privacy Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-settings"></i> Settings</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="zmdi zmdi-time-restore"></i> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="top-search">
+                <input type="text" class="top-search__input" placeholder="Search for people, files &amp; reports">
+                <i class="zmdi zmdi-search top-search__reset"></i>
+            </form>
         </header>
-
-        @if(config('adminlte.layout') != 'top-nav')
+        
         <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
+              
 
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
 
-                <!-- Sidebar Menu -->
-                <ul class="sidebar-menu" data-widget="tree">
-                    @each('adminlte::partials.menu-item', $adminlte->menu(), 'item')
-                </ul>
-                <!-- /.sidebar-menu -->
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-        @endif
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            @if(config('adminlte.layout') == 'top-nav')
-            <div class="container">
-            @endif
 
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                @yield('content_header')
-            </section>
 
-            <!-- Main content -->
-            <section class="content">
 
-                @yield('content')
-
-            </section>
-            <!-- /.content -->
-            @if(config('adminlte.layout') == 'top-nav')
+        <aside id="navigation">
+            <div class="navigation__header">
+                <i class="zmdi zmdi-long-arrow-left" data-mae-action="block-close"></i>
             </div>
-            <!-- /.container -->
-            @endif
-        </div>
-        <!-- /.content-wrapper -->
+            <div class="navigation__toggles">
+                <a href="" class="active" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__messages">
+                    <i class="zmdi zmdi-email"></i>
+                </a>
+                <a href="" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__updates">
+                    <i class="zmdi zmdi-notifications"></i>
+                </a>
+                <a href="" data-mae-action="block-open" data-mae-target="#notifications" data-toggle="tab" data-target="#notifications__tasks">
+                    <i class="zmdi zmdi-playlist-plus"></i>
+                </a>
+            </div>
+            <div class="navigation__menu c-overflow mCustomScrollbar _mCS_1 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;">
+                <div id="mCSB_1" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical_horizontal mCSB_outside" style="max-height: none;" tabindex="0">
+                    <div id="mCSB_1_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y mCS_x_hidden mCS_no_scrollbar_x" style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
+                        <ul>
+                            <li class="navigation__active">
+                                <a href="index.html"><i class="zmdi zmdi-home"></i> Home</a>
+                            </li>
+                            <li><a href="typography.html"><i class="zmdi zmdi-format-underlined"></i> Typography</a></li>
+                            <li><a href="widgets.html"><i class="zmdi zmdi-widgets"></i> Widgets</a></li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Tables</a>
 
+                                <ul>
+                                    <li><a href="tables.html">Normal Tables</a></li>
+                                    <li><a href="data-tables.html">Data Tables</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-collection-text"></i> Forms</a>
+                                <ul>
+                                    <li><a href="form-elements.html">Basic Form Elements</a></li>
+                                    <li><a href="form-components.html">Form Components</a></li>
+                                    <li><a href="form-examples.html">Form Examples</a></li>
+                                    <li><a href="form-validations.html">Form Validation</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-swap-alt"></i>User Interface</a>
+                                <ul>
+                                    <li><a href="animations.html">Animations</a></li>
+                                    <li><a href="buttons.html">Buttons</a></li>
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li><a href="alerts.html">Alerts</a></li>
+                                    <li><a href="preloaders.html">Preloaders</a></li>
+                                    <li><a href="notification-dialog.html">Notifications &amp; Dialogs</a></li>
+                                    <li><a href="media.html">Media</a></li>
+                                    <li><a href="components.html">Components</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-trending-up"></i>Charts</a>
+                                <ul>
+                                    <li><a href="flot-charts.html">Flot Chart</a></li>
+                                    <li><a href="other-charts.html">Others</a></li>
+                                </ul>
+                            </li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-image"></i>Photo Gallery</a>
+                                <ul>
+                                    <li><a href="photos.html">Default</a></li>
+                                    <li><a href="photo-timeline.html">Timeline</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="calendar.html"><i class="zmdi zmdi-calendar"></i> Calendar</a></li>
+                            <li><a href="generic-classes.html"><i class="zmdi zmdi-layers"></i> Generic Classes</a></li>
+                            <li class="navigation__sub">
+                                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-collection-item"></i> Sample Pages</a>
+                                <ul>
+                                    <li><a href="profile-timeline.html">Profile</a></li>
+                                    <li><a href="list-view.html">List View</a></li>
+                                    <li><a href="messages.html">Messages</a></li>
+                                    <li><a href="pricing-table.html">Pricing Table</a></li>
+                                    <li><a href="contacts.html">Contacts</a></li>
+                                    <li><a href="wall.html">Wall</a></li>
+                                    <li><a href="invoice.html">Invoice</a></li>
+                                    <li><a href="login.html">Login and Sign Up</a></li>
+                                    <li><a href="lockscreen.html">Lockscreen</a></li>
+                                    <li><a href="404.html">Error 404</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: none;">
+                    <div class="mCSB_draggerContainer">
+                        <div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; height: 0px; top: 0px;">
+                            <div class="mCSB_dragger_bar" style="line-height: 50px;"></div>
+                        </div>
+                        <div class="mCSB_draggerRail"></div>
+                    </div>
+                </div>
+                <div id="mCSB_1_scrollbar_horizontal" class="mCSB_scrollTools mCSB_1_scrollbar mCS-minimal-dark mCSB_scrollTools_horizontal" style="display: none;">
+                    <div class="mCSB_draggerContainer">
+                        <div id="mCSB_1_dragger_horizontal" class="mCSB_dragger" style="position: absolute; min-width: 50px; width: 0px; left: 0px;">
+                            <div class="mCSB_dragger_bar"></div>
+                        </div>
+                        <div class="mCSB_draggerRail"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section id="main" style="padding-top: 100px;">
+            <section id="content">
+                @yield('content')    
+            </section>                
+        </section>
     </div>
-    <!-- ./wrapper -->
-@stop
-
-@section('adminlte_js')
-    <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
-    @stack('js')
-    @yield('js')
 @stop

@@ -6694,9 +6694,11 @@ p{
 }
 #header{
     user-select:none;
-    padding:40px 45px;
+    padding: 20px 40px 20px 0px;
     margin-bottom:20px;
-    z-index:10
+    z-index:10;
+    width: calc(100% - 270px);
+    float: right;
 }
 #header:after,#header:before{
     content:" ";
