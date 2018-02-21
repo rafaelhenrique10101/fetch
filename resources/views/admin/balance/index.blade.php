@@ -23,7 +23,6 @@
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3><sup style="font-size: 20px">R$</sup>&nbsp;{{ number_format($amount, 2, ',', '') }}</h3>
-
                         <p>Saldo dispon&iacute;vel</p>
                     </div>
                     <a href="#" class="small-box-footer">Hist&oacute;rico <i class="fa fa-arrow-circle-right"></i></a>

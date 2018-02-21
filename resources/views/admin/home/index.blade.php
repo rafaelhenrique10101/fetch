@@ -24,7 +24,8 @@
 				<div class="chart-sparkline-line"><canvas width="441" height="50" style="display: inline-block; width: 441px; height: 50px; vertical-align: top;"></canvas></div>
 			</div>
 		</div>
-	</div><div class="card">
+	</div>
+	<div class="card">
 		<div class="card__header">
 			<h2>Recent Posts <small>Venenatis portauam Inceptos ameteiam</small></h2>
 			<div class="actions">

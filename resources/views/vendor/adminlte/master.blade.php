@@ -12,17 +12,10 @@
     <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-		  
-	
-</head>
-<body>
-
-@yield('body')
+	<link rel="stylesheet" href="{{ asset('css/demo.css') }}">
 	
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
+	<script src="{{ asset('js/fetch.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>	
 	<script src="{{ asset('js/moment.min.js') }}"></script>
@@ -39,6 +32,15 @@
 	<script src="{{ asset('js/misc.js') }}"></script>	
 	<script src="{{ asset('js/calendar.js') }}"></script>
 	<script src="{{ asset('js/app.min.js') }}"></script>
+	
+    <!-- Google Font -->
+    <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+		  
+	
+</head>
+<body>
+
+@yield('body')	
 
 </body>
 </html>

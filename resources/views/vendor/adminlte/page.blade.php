@@ -17,12 +17,6 @@
 		<!-- CONTENT PRINCIPAL AQUI -->
 		@yield('content')
 	</section> 
-</section>			
-		<!--<footer id="footer">
-				@yield('footer')    
-			</footer>
-@yield('content')    
-			-->
-
+</section>
 @stop
 		
