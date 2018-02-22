@@ -10,8 +10,38 @@
 			<i class="zmdi zmdi-search top-search__reset"></i>
 		</form>
 	</header>
-	<aside id="navigation" style="background-color: #2c2d31;">	
+	<aside id="navigation" style="background-color: #2c2d31;">
+		<div style="float: left;position: relative;width: 100%;height: 150px;">
+		
+		</div>	
 		<!-- MENU PRINCIPAL AQUI -->
+		<div style="padding: 20px 0px;width: 100%;float: left;">
+			<a href="#" style="float: left;position: relative;width: 100%;">
+				<div class="navigation__active" style="height: 50px;line-height: 50px;padding: 0 20px;border-left: solid 4px #fc7c9b;">
+					<span style="font: 400 15px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;color: #b4bfc3;">Dashboard</span>
+				</div>
+			</a>
+			<a href="#" style="float: left;position: relative;width: 100%;">
+				<div class="navigation__active" style="height: 50px;line-height: 50px;padding: 0 20px;border-left: solid 4px transparent;">
+					<span style="font: 400 15px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;color: #b4bfc3;">Relatórios</span>
+				</div>
+			</a>
+			<a href="#" style="float: left;position: relative;width: 100%;">
+				<div class="navigation__active" style="height: 50px;line-height: 50px;padding: 0 20px;border-left: solid 4px transparent;">
+					<span style="font: 400 15px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;color: #b4bfc3;">Rastrear conteúdo</span>
+				</div>
+			</a>
+			<a href="#" style="float: left;position: relative;width: 100%;">
+				<div class="navigation__active" style="height: 50px;line-height: 50px;padding: 0 20px;border-left: solid 4px transparent;">
+					<span style="font: 400 15px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;color: #b4bfc3;">Configurações</span>
+				</div>
+			</a>
+			<a href="#" style="float: left;position: relative;width: 100%;">
+				<div class="navigation__active" style="height: 50px;line-height: 50px;padding: 0 20px;border-left: solid 4px transparent;">
+					<span style="font: 400 15px Roboto, RobotoDraft, Helvetica, Arial, sans-serif;color: #b4bfc3;">Financeiro</span>
+				</div>
+			</a>
+		</div>
 	</aside>						
 	<section id="content" style="width: calc(100% - 270px);height: calc(100% - 80px);float: left;position: absolute;bottom: 0;">
 		<!-- CONTENT PRINCIPAL AQUI -->

@@ -6696,9 +6696,9 @@ p{
 }
 #header{
     user-select:none;
-    padding: 0px 40px;
+    padding: 0px 15px;
     z-index:10;
-    width: calc(100% - 270px);
+    width: calc(100% - 160px);
     float: left;
     line-height: 80px;
     height: 80px;
