@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/.idea
+/.vscode
 /storage/*.key
 npm-debug.log
 yarn-error.log
