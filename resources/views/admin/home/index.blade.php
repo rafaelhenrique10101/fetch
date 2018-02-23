@@ -7,9 +7,16 @@
 <div class="card" style="background-color: transparent">
 	<div class="card__header">		
 		<div class="actions">
-			<div style="float: left;position: relative;padding: 10px 17px;border: solid 1.2px transparent;background: linear-gradient(to bottom,#f8967d,#ef7694);border-radius: 2px;">
-    			<span style="font: 600 13.1px Roboto,sans-serif;color: #fff;">Exportar relatório</span>
-			</div>
+			<!--<div style="float: left;position: relative;padding: 10px 17px;border: solid 1.2px transparent;background: linear-gradient(to bottom,#f8967d,#ef7694);border-radius: 2px;">-->
+    			<!--<span style="font: 600 13.1px Roboto,sans-serif;color: #fff;">Exportar relatório</span>-->
+				<button class="btn">Gr&aacute;fico linear
+					<img class="expand-more-icon" src="img/icons/svg/ic_expand_more_white_24px.svg"/>
+				</button>
+				<button class="btn">Semanal
+					<img class="expand-more-icon" src="img/icons/svg/ic_expand_more_white_24px.svg"/>
+				</button>
+				<button class="btn btn--light">Sincronizar</button>
+			<!--</div>-->
 		</div>
 		<div class="actions_buttons">
 			<div></div>
