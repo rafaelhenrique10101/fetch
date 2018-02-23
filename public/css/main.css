@@ -1074,7 +1074,7 @@ hr{
 }
 .h4,.h5,.h6,h4,h5,h6{
     margin-top:9px;
-    margin-bottom:9px
+    margin-bottom:9px;
 }
 .h4 .small,.h4 small,.h5 .small,.h5 small,.h6 .small,.h6 small,h4 .small,h4 small,h5 .small,h5 small,h6 .small,h6 small{
     font-size:75%
@@ -1184,6 +1184,24 @@ a.text-warning:focus,a.text-warning:hover{
 }
 .text-danger{
     color:#c35249
+}
+.text-white{
+    color:#fff
+}
+.bg-pink-light{
+background-color: #fc7c9b;
+}
+.bg-purple-light{
+background-color: #bdaaf7;
+}
+.h5, .legend{
+margin: 3px 10px 3px 20px;
+}
+.text-pink-light{
+color: #fc7c9b;
+}
+.text-purple-light{
+color: #bdaaf7;
 }
 a.text-danger:focus,a.text-danger:hover{
     color:#a33e36
@@ -2530,7 +2548,7 @@ select[multiple].input-lg,textarea.input-lg{
     vertical-align:middle;
     touch-action:manipulation;
     cursor:pointer;
-    border: 2px solid #5c5d5f;
+    border: 2px solid #5c5d5fa8;
     background-color: transparent;
     white-space:nowrap;
     padding: 7px 20px;
@@ -7276,11 +7294,26 @@ p{
     z-index:2;
     top:20px
 }
-.card>.actions,.card__header .actions_buttons{
+.card>.actions,.card__header .box-title{
     position:absolute;
     z-index:2;
     top:20px;
     left:0;
+}
+.legend-box-title_m1{
+float: right;position: relative;line-height: 0;margin: 0 5px;
+}
+.legend-box-title_m2{
+float: right;position: relative;line-height: 0;margin: 0 5px 0 20px;
+}
+
+.button-rounded-legend{
+width: 14px;
+height: 14px;
+float: left;
+position: absolute;
+top: 2px;
+border-radius: 50%;
 }
 @media (min-width:768px){
     .card__body,.card__header{

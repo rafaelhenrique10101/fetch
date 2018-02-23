@@ -18,9 +18,18 @@
 				<button class="btn btn--light">Sincronizar</button>
 			<!--</div>-->
 		</div>
-		<div class="actions_buttons">
-			<div></div>
-		</div>
+		<div class="box-title">			
+			<h4 class="text-white">Conteúdo
+				<div class="legend-box-title_m1">
+					<div class="button-rounded-legend bg-pink-light"></div>
+					<h5 class="legend">Downloads</h5>
+				</div>
+				<div class="legend-box-title_m2">
+					<div class="button-rounded-legend bg-purple-light"></div>
+					<h5 class="legend">Publicado</h5>
+				</div>
+			</h4>			
+		</div>		
 	</div>
 	<div class="flot-chart-edge" style="height: 250px;">
 		
