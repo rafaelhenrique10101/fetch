@@ -58,7 +58,7 @@
 			</a>
 		</div>
 	</aside>						
-	<section id="content" style="width: calc(100% - 270px);height: calc(100% - 80px);float: left;position: absolute;bottom: 0;">
+	<section id="content" style="width: calc(100% - 270px);height: calc(100% - 80px);float: left;position: absolute;bottom: 0;padding: 15px;">
 		<!-- CONTENT PRINCIPAL AQUI -->
 		@yield('content')
 	</section> 

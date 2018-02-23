@@ -1,7 +1,25 @@
 @extends('adminlte::page')
 
 @section('content')
-<div class="column size-1of2">
+<div class="margin-title-page">
+<h3>Dashboard</h3>
+</div>
+<div class="card" style="background-color: transparent">
+	<div class="card__header">		
+		<div class="actions">
+			<div style="float: left;position: relative;padding: 10px 17px;border: solid 1.2px transparent;background: linear-gradient(to bottom,#f8967d,#ef7694);border-radius: 2px;">
+    			<span style="font: 600 13.1px Roboto,sans-serif;color: #fff;">Exportar relatório</span>
+			</div>
+		</div>
+		<div class="actions_buttons">
+			<div></div>
+		</div>
+	</div>
+	<div class="flot-chart-edge" style="height: 250px;">
+		
+	</div>
+</div>
+<div class="column size-1of3">
 	<div class="card widget-analytic">
 		<div class="card__header">
 			<h2>Saldo<small>Acompanhe seu saldo dispon&iacute;vel atualizado</small></h2>

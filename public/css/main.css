@@ -986,10 +986,6 @@ body{
     line-height:1.42857143;
     color:#8a9ba1;
     background-color: #29292d;
-    float: left;
-    width: 100%;
-    height: 100%;
-    position: absolute;
 }
 button,input,select,textarea{
     font-family:inherit;
@@ -6421,13 +6417,13 @@ body:before{
     top:0;
     background-color:#1e2a31;
 }
+.margin-title-page{
+    margin: 20px 0;
+}
 #header,#main,.top-search{
-    position: absolute;
+    position: a;
     top: 0;
     height: 100%;
-    float: left;
-    width: 100%;
-    bottom: 0;
 }
 @media (max-width:767px){
     body:before{
@@ -6452,8 +6448,8 @@ p{
 }
 @media (min-width:1280px){
     #main{
-        padding: 0 40px 0px 270px;
-        min-height:calc(100vh - 159px);
+        padding:0 40px 30px 270px;
+        min-height:calc(100vh - 159px)
     }
 }
 @media (max-width:1279px) and (min-width:768px){
@@ -6705,7 +6701,7 @@ p{
     user-select:none;
     padding: 0px 15px;
     z-index:10;
-    width: calc(100% - 300px);
+    width: calc(100% - 160px);
     float: left;
     line-height: 80px;
     height: 80px;
@@ -6770,8 +6766,7 @@ p{
 }
 .top-search{
     margin:2px 0;
-    overflow:hidden;
-    width: calc(100% - 250px);
+    overflow:hidden
 }
 @media (max-width:991px){
     .top-search{
@@ -7274,6 +7269,12 @@ p{
     z-index:2;
     top:20px
 }
+.card>.actions,.card__header .actions_buttons{
+    position:absolute;
+    z-index:2;
+    top:20px;
+    left:0;
+}
 @media (min-width:768px){
     .card__body,.card__header{
         padding:30px 32px
@@ -7294,9 +7295,9 @@ p{
 .card__header h2{
     margin:0;
     line-height:100%;
-    font-size:16px;
+    font-size: 24px;
     font-weight:400;
-    color:#b4bfc3
+    color:#b4bfc3;
 }
 .card__header h2 small{
     display:block;
@@ -9413,7 +9414,7 @@ body.overflow-hidden{
         margin:0 -15px
     }
     .column{
-        padding:0 15px
+        padding: 0;
     }
 }
 @media screen and (min-width:768px) and (max-width:1499px){
