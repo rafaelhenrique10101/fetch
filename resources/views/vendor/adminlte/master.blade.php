@@ -6,32 +6,40 @@
     <title>Enoove - Fetch</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/animate.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/material-design-iconic-font.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/fullcalendar.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
-	<link rel="stylesheet" href="{{ asset('css/demo.css') }}">
-	
-	<script src="{{ asset('js/jquery.min.js') }}"></script>
-	<script src="{{ asset('js/fetch.js') }}"></script>
-	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.mCustomScrollbar.concat.min.js') }}"></script>	
-	<script src="{{ asset('js/moment.min.js') }}"></script>
-	<script src="{{ asset('js/fullcalendar.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.simpleWeather.min.js') }}"></script>
-	<script src="{{ asset('js/salvattore.min.js') }}"></script>
-	<script src="{{ asset('js/jquery.flot.js') }}"></script>
-	<script src="{{ asset('js/jquery.flot.resize.js') }}"></script>
-	<script src="{{ asset('js/curvedLines.js') }}"></script>	
+    
+	<!-- Bootstrap CSS-->
+    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href={{ asset('css/font-awesome.min.css') }}>
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href={{ asset('css/font.css') }}>
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href={{ asset('css/google_fonts.css') }}>
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href={{ asset('css/style.default.premium.css') }} id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href={{ asset('css/custom.css') }}>
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <script src={{ asset('js/html5shiv.min.js') }}></script>
+    <script src={{ asset('js/respond.min.js') }}></script><![endif]-->
+  <style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
+</head>
 
-	<script src="{{ asset('js/curved-line.js') }}"></script>
-	<script src="{{ asset('js/line.js') }}"></script>
-	<script src="{{ asset('js/easy-pie-charts.js') }}"></script>
-	<script src="{{ asset('js/misc.js') }}"></script>	
-	<script src="{{ asset('js/calendar.js') }}"></script>
-	<script src="{{ asset('js/app.min.js') }}"></script>
+	<script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
+	<script src="{{ asset('js/popper.min.js') }}"> </script>
+	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/jquery.cookie.js') }}"> </script>
+	<script src="{{ asset('js/Chart.min.js') }}"></script>
+	<script src="{{ asset('js/charts-home.js') }}"></script>
+	<!-- Notifications-->
+	<script src="{{ asset('js/messenger.min.js') }}">   </script>
+	<script src="{{ asset('js/messenger-theme-flat.js') }}"></script>
+	<script src="{{ asset('js/home-premium.js') }}"> </script>
+	<script src="{{ asset('js/front.js') }}"></script>
 	
     <!-- Google Font -->
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
