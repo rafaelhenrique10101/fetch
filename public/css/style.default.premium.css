@@ -105,9 +105,9 @@ pre{
 }
 .block{
     padding:20px;
-    background:#2d3035;
+    background: #2c2d31;
     color:#8a8d93;
-    margin-bottom:30px
+    margin-bottom:30px;
 }
 .card{
     margin-bottom:30px;
@@ -119,20 +119,20 @@ pre{
 }
 .page-content{
     position:relative;
-    background:#22252a;
+    background: #29292d;
     min-height:100vh;
     width:calc(100% - 280px);
     padding:0;
-    padding-bottom:70px
+    padding-bottom:70px;
 }
 .page-content.active{
     width:100%
 }
 .page-header{
     padding:20px 15px;
-    background:#2d3035;
+    background: #2c2d31;
     color:#8a8d93;
-    margin-bottom:30px
+    margin-bottom:30px;
 }
 .footer{
     position:absolute;
@@ -253,12 +253,12 @@ i[class*='icon-']{
     font-size:0.95rem
 }
 nav.navbar{
-    background:#2d3035;
+    background: #2c2d31;
     color:#8a8d93;
     padding-top:20px;
     padding-bottom:20px;
     border-bottom:1px solid #34373d;
-    z-index:10
+    z-index:10;
 }
 nav.navbar .sidebar-toggle{
     width:36px;
@@ -521,9 +521,9 @@ nav.navbar .dropdown .dropdown-menu.active{
 }
 nav#sidebar{
     width:280px;
-    background:#2d3035;
+    background: #2c2d31;
     color:#6a6c70;
-    border-right:1px solid #34373d
+    border-right:1px solid #34373d;
 }
 nav#sidebar a{
     color:inherit;
@@ -615,21 +615,21 @@ nav#sidebar li li a:hover{
     background:#292c32
 }
 nav#sidebar li li a:hover i{
-    color:#DB6574
+    color:#fc7c9b
 }
 nav#sidebar li::before{
     content:'';
-    width:2px;
+    width: 4px;
     height:100%;
     background:none;
     display:block;
     position:absolute;
     top:0;
     left:0;
-    z-index:99
+    z-index:99;
 }
 nav#sidebar li.active::before{
-    background:#DB6574
+    background: #fc7c9b;
 }
 nav#sidebar li.active>a{
     background:#34373d;
@@ -750,8 +750,8 @@ nav#sidebar.shrinked a[aria-expanded="true"]::after{
 }
 .statistic-block{
     padding:20px;
-    background:#2d3035;
-    color:#8a8d93
+    background: #2c2d31;
+    color:#8a8d93;
 }
 .statistic-block .title{
     margin-bottom:0

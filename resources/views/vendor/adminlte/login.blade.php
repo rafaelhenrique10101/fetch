@@ -6,199 +6,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login - Fetch</title>
 
-    <!-- Animate CSS -->
-    <link href="css/animate.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- Custom Font Icons CSS-->
+    <link rel="stylesheet" href="css/font.css">
+    <!-- Google fonts - Muli-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.default.premium.css" id="theme-stylesheet">
+    <link id="new-stylesheet" rel="stylesheet" href="css/style.sea.premium.css">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script><![endif]-->
+  <style type="text/css">/* Chart.js */
+    @-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
 
-    <!-- Material Design Icons -->
-    <link href="css/material-design-iconic-font.min.css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"> </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.cookie.js"> </script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/front.js"></script>
 
-    <!-- Site CSS -->
-    <link href="css/main.css" rel="stylesheet">
 </head>
 <body>
-<div class="login">
-    <!-- Login -->
-    <div class="login__block toggled" id="l-login">
-        <div class="login__block__header">
-            <i class="zmdi zmdi-account-circle"></i>
-            Hi there! Please Sign in
-
-            <div class="actions login__block__actions">
-                <div class="dropdown">
-                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
-
-                    <ul class="dropdown-menu pull-right">
-                        <li><a data-block="#l-register" href="">Create an account</a></li>
-                        <li><a data-block="#l-forget-password" href="">Forgot password?</a></li>
-                    </ul>
+    <div class="login-page">
+        <div class="container d-flex align-items-center">
+            <div class="form-holder has-shadow">
+                <div class="row">
+                <!-- Logo & Information Panel-->
+                <div class="col-lg-6">
+                    <div class="info d-flex align-items-center">
+                    <div class="content">
+                        <div class="logo">
+                        <h1>Dashboard</h1>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    </div>
+                </div>
+                <!-- Form Panel    -->
+                <div class="col-lg-6 bg-white">
+                    <div class="form d-flex align-items-center">
+                    <div class="content">
+                        <form id="login-form" action="{{route('login')}}" method="post">
+                        {!! csrf_field() !!}
+                        <div class="form-group">
+                            <input id="login-username" type="email" name="email" required="" class="input-material" value="{{ old('email') }}" placeholder="{{ trans('adminlte::adminlte.email') }}">
+                            <label for="login-username" class="label-material">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <input id="login-password" type="password" name="password" required="" class="input-material" >
+                            <label for="login-password" class="label-material">Password</label>
+                        </div>
+                        <button id="login" class="btn btn-primary">Login</button>
+                        <!-- This should be submit button but I replaced it with <a> for demo purposes-->
+                        </form>
+                            <a href="#" class="forgot-pass">Forgot Password?</a><br>
+                    </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
-
-        <div class="login__block__body">
-            <form action="{{route('login')}}" method="post">
-                {!! csrf_field() !!}
-                <div class="form-group form-group--float form-group--centered form-group--centered">
-                    <input type="email" name="email" class="form-control" value="{{ old('email') }}"
-                           placeholder="{{ trans('adminlte::adminlte.email') }}">
-                    <label>Email Address</label>
-                    <i class="form-group__bar"></i>
-                </div>
-
-                <div class="form-group form-group--float form-group--centered form-group--centered">
-                    <input type="password" name="password" class="form-control"
-                           placeholder="{{ trans('adminlte::adminlte.password') }}">
-                    <label>Password</label>
-                    <i class="form-group__bar"></i>
-                </div>
-
-                <button class="btn btn--light btn--icon m-t-15"><i class="zmdi zmdi-long-arrow-right"></i></button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Register -->
-    <div class="login__block" id="l-register">
-        <div class="login__block__header palette-Blue bg">
-            <i class="zmdi zmdi-account-circle"></i>
-            Create an account
-
-            <div class="actions login__block__actions">
-                <div class="dropdown">
-                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
-
-                    <ul class="dropdown-menu pull-right">
-                        <li><a data-block="#l-login" href="">Already have an account?</a></li>
-                        <li><a data-block="#l-forget-password" href="">Forgot password?</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="login__block__body">
-            <div class="form-group form-group--float form-group--centered">
-                <input type="text" class="form-control">
-                <label>Name</label>
-                <i class="form-group__bar"></i>
-            </div>
-
-            <div class="form-group form-group--float form-group--centered">
-                <input type="text" class="form-control">
-                <label>Email Address</label>
-                <i class="form-group__bar"></i>
-            </div>
-
-            <div class="form-group form-group--float form-group--centered">
-                <input type="password" class="form-control">
-                <label>Password</label>
-                <i class="form-group__bar"></i>
-            </div>
-
-            <div class="input-centered">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="">
-                        <i class="input-helper"></i>
-                        Accept the license agreement
-                    </label>
-                </div>
-            </div>
-
-            <button class="btn btn--light btn--icon m-t-15"><i class="zmdi zmdi-plus"></i></button>
+        <div class="copyrights text-center">
+        <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+        <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
         </div>
     </div>
-
-    <!-- Forgot Password -->
-    <div class="login__block" id="l-forget-password">
-        <div class="login__block__header palette-Purple bg">
-            <i class="zmdi zmdi-account-circle"></i>
-            Forgot Password?
-
-            <div class="actions login__block__actions">
-                <div class="dropdown">
-                    <a href="" data-toggle="dropdown"><i class="zmdi zmdi-more-vert"></i></a>
-
-                    <ul class="dropdown-menu pull-right">
-                        <li><a data-block="#l-login" href="">Already have an account?</a></li>
-                        <li><a data-block="#l-register" href="">Create an account</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="login__block__body">
-            <p class="m-t-30">Lorem ipsum dolor fringilla enim feugiat commodo sed ac lacus.</p>
-
-            <div class="form-group form-group--float form-group--centered">
-                <input type="text" class="form-control">
-                <label>Email Address</label>
-                <i class="form-group__bar"></i>
-            </div>
-
-            <button class="btn btn--light btn--icon m-t-15"><i class="zmdi zmdi-check"></i></button>
-        </div>
-    </div>
-</div>
-
-<!-- Older IE Warning -->
-<!--[if lt IE 9]>
-<div class="ie-warning">
-    <h1>Warning!!</h1>
-    <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers
-        to access this website.</p>
-    <div class="ie-warning__container">
-        <ul class="ie-warning__download">
-            <li>
-                <a href="http://www.google.com/chrome/">
-                    <img src="img/browsers/chrome.png" alt="">
-                    <div>Chrome</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.mozilla.org/en-US/firefox/new/">
-                    <img src="img/browsers/firefox.png" alt="">
-                    <div>Firefox</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://www.opera.com">
-                    <img src="img/browsers/opera.png" alt="">
-                    <div>Opera</div>
-                </a>
-            </li>
-            <li>
-                <a href="https://www.apple.com/safari/">
-                    <img src="img/browsers/safari.png" alt="">
-                    <div>Safari</div>
-                </a>
-            </li>
-            <li>
-                <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
-                    <img src="img/browsers/ie.png" alt="">
-                    <div>IE (New)</div>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <p>Sorry for the inconvenience!</p>
-</div>
-<![endif]-->
-
-
-<!-- Javascript Libraries -->
-
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-
-<!-- Placeholder for IE9 -->
-<!--[if IE 9 ]>
-<script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
-<![endif]-->
-
-<!-- Site Functions & Actions -->
-<script src="js/app.min.js"></script>
 </body>
 </html>
