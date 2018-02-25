@@ -55,7 +55,7 @@
                 <div class="col-lg-6 bg-white">
                     <div class="form d-flex align-items-center">
                     <div class="content">
-                        <form id="login-form" action="{{route('login')}}" method="post">
+                        <form id="login-form" action="{{ route('login') }}" method="post">
                         {!! csrf_field() !!}
                         <div class="form-group">
                             <input id="login-username" type="email" name="email" required="" class="input-material" value="{{ old('email') }}" placeholder="{{ trans('adminlte::adminlte.email') }}">

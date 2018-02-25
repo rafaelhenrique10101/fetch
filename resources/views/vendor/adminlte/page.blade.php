@@ -135,7 +135,8 @@
 			</div>
 			<!-- Megamenu end                    -->
 			<div class="list-inline-item logout">
-				<a id="logout" href="login.html" class="nav-link">Logout <i class="icon-logout"></i></a>
+				<a id="logout" href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout <i class="icon-logout"></i></a>				
+				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
 			</div>
 			</div>
 		</div>
@@ -146,11 +147,11 @@
       <!-- Sidebar Navigation-->
       <nav id="sidebar">
         <ul class="list-unstyled">
-                <li class="active"><a href="index.html"> <i class="icon-home"></i>Home </a></li>
-                <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Tables </a>
+                <li class="active"><a href="{{ route('admin.home') }}" id="id_link_menu"> <i class="icon-home"></i>Dashboard </a></li>
+                <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
                   <ul id="tablesDropdown" class="collapse list-unstyled ">
-                    <li><a href="tables.html">Bootstrap tables</a></li>
-                    <li><a href="tables-datatable.html">Datatable</a></li>
+                    <li><a href="{{ route('admin.balance') }}" id="id_link_menu">Saldo de recarga</a></li>
+                    <li><a href="" id="id_link_menu">Regargar</a></li>
                   </ul>
                 </li>
                 <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Charts </a>
@@ -188,13 +189,9 @@
       </nav>
       <!-- Sidebar Navigation end-->
       <div class="page-content">
-        <div class="page-header">
-          <div class="container-fluid">
-            <h2 class="h5 no-margin-bottom">Dashboard</h2>
-          </div>
-        </div>
+        
+			@yield('content')
 		
-		@yield('content')
 
         <footer class="footer">
           <div class="footer__block block no-margin-bottom">

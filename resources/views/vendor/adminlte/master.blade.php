@@ -40,6 +40,7 @@
 	<script src="{{ asset('js/messenger-theme-flat.js') }}"></script>
 	<script src="{{ asset('js/home-premium.js') }}"> </script>
 	<script src="{{ asset('js/front.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 	
     <!-- Google Font -->
     <link rel="stylesheet"href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
