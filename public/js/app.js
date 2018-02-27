@@ -12,10 +12,7 @@ var menuSideBar = $("a#id_link_menu");
 var contentView = $(".page-content");
 var baseUrl = window.location.protocol + "//" + window.location.host;
 var routeInsertedNavigator = $(location).attr("href").replace(baseUrl, '');
-
-
-
-//loadViews(routeInsertedNavigator, 'GET', 'HTML', null, contentView);
+var modal = $("#myModal");
 
 
 //===========================================================================================================================
@@ -52,5 +49,14 @@ function loadViews(route, method, dataType, parameters, contentElement){
         e.preventDefault();
     });
 
+
+
+//===========================================================================================================================
+//============================================== VIEW DE RECARGA ============================================================
+//===========================================================================================================================
+
+    $(".page-content").off("click","#id_btn_carregar").on("click", "#id_btn_carregar", function (e){
+        $(modal).show();
+    });
 
 });

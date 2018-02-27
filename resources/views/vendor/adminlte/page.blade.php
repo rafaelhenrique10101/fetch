@@ -123,14 +123,7 @@
 					</ul>
 					</div>
 				</div>
-				<div class="row megamenu-buttons text-center">
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link dashbg-1"><i class="fa fa-clock-o"></i><strong>Demo 1</strong></a></div>
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link dashbg-2"><i class="fa fa-clock-o"></i><strong>Demo 2</strong></a></div>
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link dashbg-3"><i class="fa fa-clock-o"></i><strong>Demo 3</strong></a></div>
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link dashbg-4"><i class="fa fa-clock-o"></i><strong>Demo 4</strong></a></div>
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link bg-danger"><i class="fa fa-clock-o"></i><strong>Demo 5</strong></a></div>
-					<div class="col-lg-2 col-md-4"><a href="#" class="d-block megamenu-button-link bg-info"><i class="fa fa-clock-o"></i><strong>Demo 6</strong></a></div>
-				</div>
+
 				</div>
 			</div>
 			<!-- Megamenu end                    -->
@@ -147,44 +140,13 @@
       <!-- Sidebar Navigation-->
       <nav id="sidebar">
         <ul class="list-unstyled">
-                <li class="active"><a href="{{ route('admin.home') }}" id="id_link_menu"> <i class="icon-home"></i>Dashboard </a></li>
-                <li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
-                  <ul id="tablesDropdown" class="collapse list-unstyled ">
-                    <li><a href="{{ route('admin.balance') }}" id="id_link_menu">Saldo de recarga</a></li>
-                    <li><a href="" id="id_link_menu">Regargar</a></li>
-                  </ul>
-                </li>
-                <li><a href="#chartsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="fa fa-bar-chart"></i>Charts </a>
-                  <ul id="chartsDropdown" class="collapse list-unstyled ">
-                    <li><a href="charts.html">Charts</a></li>
-                    <li><a href="charts-gauge-sparkline.html">Gauge + Sparkline</a></li>
-                  </ul>
-                </li>
-                <li><a href="#formsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-padnote"></i>Forms </a>
-                  <ul id="formsDropdown" class="collapse list-unstyled ">
-                    <li><a href="forms.html">Basic forms</a></li>
-                    <li><a href="forms-advanced.html">Advanced forms</a></li>
-                    <li><a href="forms-autocomplete.html">Autocomplete</a></li>
-                    <li><a href="forms-texteditor.html">Text editor</a></li>
-                    <li><a href="forms-dropzone.html">Files upload</a></li>
-                  </ul>
-                </li>
-                <li><a href="#componentsDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-light-bulb"></i>Components </a>
-                  <ul id="componentsDropdown" class="collapse list-unstyled ">
-                    <li><a href="components-cards.html">Cards</a></li>
-                    <li><a href="components-calendar.html">Calendar</a></li>
-                    <li><a href="components-gallery.html">Gallery</a></li>
-                    <li><a href="components-notifications.html">Notifications</a></li>
-                    <li><a href="components-loading-buttons.html">Loading buttons</a></li>
-                    <li><a href="components-preloader.html">Preloaders</a></li>
-                  </ul>
-                </li>
-                <li><a href="login.html"> <i class="icon-logout"></i>Login page </a></li>
-        </ul><span class="heading">Extras</span>
-        <ul class="list-unstyled">
-          <li> <a href="#"> <i class="icon-settings"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-writing-whiteboard"></i>Demo </a></li>
-          <li> <a href="#"> <i class="icon-chart"></i>Demo </a></li>
+					<li class="active"><a href="{{ route('admin.home') }}" id="id_link_menu"> <i class="icon-home"></i>Dashboard </a></li>
+						<li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
+							<ul id="tablesDropdown" class="collapse list-unstyled ">
+								<li><a href="{{ route('admin.balance') }}" id="id_link_menu">Saldo de recarga</a></li>
+								<li><a href="" id="id_link_menu">Regargar</a></li>
+							</ul>
+						</li>                
         </ul>
       </nav>
       <!-- Sidebar Navigation end-->

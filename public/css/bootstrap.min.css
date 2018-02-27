@@ -451,6 +451,9 @@ pre code{
     margin-right:auto;
     margin-left:auto
 }
+.padding-header-btn-actions{    
+    padding:15px;  
+}
 .row{
     display:-webkit-box;
     display:-ms-flexbox;
@@ -2067,6 +2070,31 @@ select.form-control:focus::-ms-value{
     line-height:1.5;
     border-radius:.25rem;
     transition:color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out
+}
+.container-btn-primary-pink{
+    float: right;
+    right: 2%;
+    position: absolute;
+
+}
+.btn-primary-pink{
+    display:inline-block;
+    font-weight:400;
+    text-align:center;
+    white-space:nowrap;
+    vertical-align:middle;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    border:1px solid transparent;
+    padding: 10px 15px;
+    margin: 0px 0px 0px 15px;
+    font-size: 16px;
+    line-height:1.5;
+    border-radius: 3px;
+    background: linear-gradient(to bottom,#f8997c,#fc7b9a);
+    color: #fff;
 }
 .btn:focus,.btn:hover{
     text-decoration:none
@@ -4446,10 +4474,11 @@ button.close{
     overflow-y:auto
 }
 .modal-dialog{
-    position:relative;
-    width:auto;
-    margin:.5rem;
-    pointer-events:none
+    position:fixed;    
+    float: left;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 .modal.fade .modal-dialog{
     transition:-webkit-transform .3s ease-out;
