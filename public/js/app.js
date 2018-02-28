@@ -4,7 +4,8 @@ $(document).ready(function(){
 
 // CONSTANTES
 
-var DASHBOARD_VIEW = "/admin"
+const DASHBOARD_VIEW = "/admin"
+const VARIANCE_VALUE_RECHARGE = 10;
 
 // INICIALIZAÇÃO DE ELEMENTOS
 
@@ -55,8 +56,40 @@ function loadViews(route, method, dataType, parameters, contentElement){
 //============================================== VIEW DE RECARGA ============================================================
 //===========================================================================================================================
 
+    // BOTÃO DE RECARREGAR
+
     $(".page-content").off("click","#id_btn_carregar").on("click", "#id_btn_carregar", function (e){
-        $(modal).show();
+        $(modal).fadeIn(200);
     });
+
+
+    // BOTÕES DE SALVAR E CANCELAR DO MODAL DE RECARGA
+
+    $(".page-content").off("click","#id_btn_modal_recarga").on("click", "#id_btn_modal_recarga", function (e){
+        var valueRecharge = $("#id_value_recharge").val();
+        $(this).attr('role') === 'salvar' ? saveRecharge(valueRecharge) : $(modal).fadeOut(200);
+        
+    });
+
+    function saveRecharge(value){
+        $(modal).fadeOut(200);
+    }
+
+
+    // BOTÕES DE AUMENTAR E DIMINUIR VALOR DE RECARGA
+
+    $(".page-content").off("click","#id_btn_plus_minus_recarga").on("click", "#id_btn_plus_minus_recarga", function (e){
+        
+        var currentValue = Number($("#id_value_recharge").val());        
+        
+        if(currentValue !== 0){
+            $(this).attr('role') === 'minus' ? currentValue = currentValue - VARIANCE_VALUE_RECHARGE : currentValue = currentValue + VARIANCE_VALUE_RECHARGE;
+            $("#id_value_recharge").val(currentValue);
+        }                
+    });
+
+    function changeValueRecharge(value){
+        $(modal).fadeOut(200);
+    }
 
 });

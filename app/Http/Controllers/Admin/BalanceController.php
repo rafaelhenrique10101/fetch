@@ -12,8 +12,12 @@ class BalanceController extends Controller
     {
         $balance = auth()->user()->balance;
         $amount = $balance ? $balance->amount : 0;
+        $result = [
+			'id'		=> $balance->id,
+			'amount' 	=> $amount
+		];
 
-        return view('admin.balance.index', compact('amount'));
+        return view('admin.balance.index', compact('result'));
     }
 
     public function deposit()

@@ -23,7 +23,7 @@
 					<div class="title"> <strong class="d-block">Saldo</strong><span class="d-block">Dispon&iacute;vel para recarga</span></div>
 					<div class="row d-flex align-items-end justify-content-between">
 						<div class="col-5">
-							<div class="text"><strong class="d-block dashtext-3">R$ 740,00</strong><span class="d-block">Fev 2018</span><small class="d-block">3 Recargas este m&ecirc;s</small></div>
+							<div class="text"><strong class="d-block dashtext-3">R$ {{ number_format($result['amount'], 2, ',', '') }}</strong><span class="d-block">Fev 2018</span><small class="d-block">3 Recargas este m&ecirc;s</small></div>
 						</div>
 						<div class="col-7">
 							<div class="bar-chart chart"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
@@ -71,52 +71,32 @@
 		</div>
 	</div>
 </section>
-<!-- <div class="box">
-    <div class="box-header">
-        <a href="{{route('balance.deposit')}}" class="btn btn-primary"><i class="ion ion-cash"></i>&nbsp;Recarregar</a>
-        <a href="" class="btn btn-danger"><i class="fa fa-fw fa-credit-card-alt"></i>&nbsp;Sacar</a>
-    </div>
-    <div class="box-body">
-        <div class="col-lg-3 col-xs-6">
-            
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h3><sup style="font-size: 20px">R$</sup>&nbsp;{{ number_format($amount, 2, ',', '') }}</h3>
-                    <p>Saldo dispon&iacute;vel</p>
-                </div>
-                <a href="#" class="small-box-footer">Hist&oacute;rico <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-    </div> -->
-
-    <div id="myModal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">Signin Modal</strong>
-                    <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
-                </div>
+<div id="myModal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><strong id="exampleModalLabel" class="modal-title">Realizar recarga</strong></div>
                 <div class="modal-body">
-                    <p>Lorem ipsum dolor sit amet consectetur.</p>
-                    <form>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" placeholder="Email Address" class="form-control">
+                    <p>Informe abaixo o valor de recarga considerando os valores de R$ 15,00, R$ 25,00, R$ 50,00 e R$ 100,00</p>
+                    <div style="width: 100%;height: 50px;">
+                        <div class="input-group bootstrap-touchspin input-number-aling-center">
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary bootstrap-touchspin-down" type="button" id="id_btn_plus_minus_recarga" role="minus">-</button>
+                            </span>
+                            <span class="input-group-addon bootstrap-touchspin-prefix input-group-text">$</span>
+                            <input type="text" value="10" name="touchspin2" id="id_value_recharge" class="form-control" style="display: block;">
+                            <span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span>
+                            <span class="input-group-btn">
+                                <button class="btn btn-secondary bootstrap-touchspin-up" type="button" id="id_btn_plus_minus_recarga" role="plus">+</button>
+                            </span>
                         </div>
-                        <div class="form-group">       
-                            <label>Password</label>
-                            <input type="password" placeholder="Password" class="form-control">
-                        </div>
-                            <div class="form-group">       
-                            <input type="submit" value="Signin" class="btn btn-primary">
-                        </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" data-dismiss="modal" class="btn btn-secondary">Close</button>
-                    <input type="submit" value="Salvar" class="btn-primary-pink" id="id_btn_salvar_recarga">                    
-                </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-primary-grey" id="id_btn_modal_recarga" role="cancelar">Cancelar</button>
+                <button type="button" class="btn-primary-pink" id="id_btn_modal_recarga" role="salvar">Salvar</button>                
             </div>
         </div>
     </div>
+</div>
 </div>
 @stop

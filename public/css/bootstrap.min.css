@@ -30,7 +30,7 @@
     --font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
 }
 *,::after,::before{
-    box-sizing:border-box
+    box-sizing:border-box;
 }
 html{
     font-family:sans-serif;
@@ -38,7 +38,7 @@ html{
     -webkit-text-size-adjust:100%;
     -ms-text-size-adjust:100%;
     -ms-overflow-style:scrollbar;
-    -webkit-tap-highlight-color:transparent
+    -webkit-tap-highlight-color:transparent;
 }
 @-ms-viewport{
     width:device-width
@@ -2096,6 +2096,26 @@ select.form-control:focus::-ms-value{
     background: linear-gradient(to bottom,#f8997c,#fc7b9a);
     color: #fff;
 }
+.btn-primary-grey{
+    display:inline-block;
+    font-weight:400;
+    text-align:center;
+    white-space:nowrap;
+    vertical-align:middle;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    border: 2px solid rgb(134, 142, 150);
+    padding: 10px 15px;
+    margin: 0px 0px 0px 15px;
+    font-size: 16px;
+    line-height:1.5;
+    border-radius: 3px;
+    background: transparent;
+    color: #fff;
+}
+
 .btn:focus,.btn:hover{
     text-decoration:none
 }
@@ -4467,14 +4487,14 @@ button.close{
     z-index:1050;
     display:none;
     overflow:hidden;
-    outline:0
+    outline:0;
 }
 .modal-open .modal{
     overflow-x:hidden;
     overflow-y:auto
 }
 .modal-dialog{
-    position:fixed;    
+    position:fixed;
     float: left;
     left: 50%;
     top: 50%;
@@ -4501,21 +4521,13 @@ button.close{
     min-height:calc(100% - (.5rem * 2))
 }
 .modal-content{
-    position:relative;
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-    -ms-flex-direction:column;
-    flex-direction:column;
+    position: relative;
     width:100%;
-    pointer-events:auto;
-    background-color:#fff;
+    background-color: #424346;
     background-clip:padding-box;
     border:1px solid rgba(0,0,0,.2);
     border-radius:.3rem;
-    outline:0
+    outline:0;
 }
 .modal-backdrop{
     position:fixed;
@@ -4543,9 +4555,9 @@ button.close{
     -ms-flex-pack:justify;
     justify-content:space-between;
     padding:1rem;
-    border-bottom:1px solid #e9ecef;
+    border-bottom: 1px solid #868e96a8;
     border-top-left-radius:.3rem;
-    border-top-right-radius:.3rem
+    border-top-right-radius:.3rem;
 }
 .modal-header .close{
     padding:1rem;
@@ -4553,7 +4565,9 @@ button.close{
 }
 .modal-title{
     margin-bottom:0;
-    line-height:1.5
+    line-height:1.5;
+    color: #fff;
+    font-size: 20px;
 }
 .modal-body{
     position:relative;
@@ -4573,7 +4587,7 @@ button.close{
     -ms-flex-pack:end;
     justify-content:flex-end;
     padding:1rem;
-    border-top:1px solid #e9ecef
+    border-top: 1px solid #868e96a8;
 }
 .modal-footer>:not(:first-child){
     margin-left:.25rem

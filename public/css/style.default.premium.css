@@ -1516,6 +1516,12 @@ input.input-material ~ label.active{
 .bootstrap-touchspin{
     max-width:15rem
 }
+.input-number-aling-center{
+    float: left;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .bootstrap-touchspin .bootstrap-touchspin-down{
     border-top-right-radius:0 !important;
     border-bottom-right-radius:0 !important
