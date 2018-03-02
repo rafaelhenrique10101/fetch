@@ -140,13 +140,13 @@
       <!-- Sidebar Navigation-->
       <nav id="sidebar">
         <ul class="list-unstyled">
-					<li class="active"><a href="{{ route('admin.home') }}" id="id_link_menu"> <i class="icon-home"></i>Dashboard </a></li>
-						<li><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
-							<ul id="tablesDropdown" class="collapse list-unstyled ">
-								<li><a href="{{ route('admin.balance') }}" id="id_link_menu">Saldo de recarga</a></li>
-								<li><a href="" id="id_link_menu">Regargar</a></li>
-							</ul>
-						</li>                
+			<li class="active" parent-li="1" type="menu-side"><a href="{{ route('admin.home') }}" id="id_link_menu" parent-li="1"> <i class="icon-home"></i>Dashboard </a></li>
+			<li parent-li="2" type="menu-side"><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
+				<ul id="tablesDropdown" class="collapse list-unstyled ">
+					<li><a href="{{ route('admin.balance') }}" id="id_link_menu" parent-li="2">Saldo de recarga</a></li>
+					<li><a href="" id="id_link_menu" parent-li="2">Regargar</a></li>
+				</ul>
+			</li>                
         </ul>
       </nav>
       <!-- Sidebar Navigation end-->

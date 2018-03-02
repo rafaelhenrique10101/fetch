@@ -28,7 +28,11 @@ class BalanceController extends Controller
     public function depositStore(Request $request)
     {
         $balance = auth()->user()->balance()->firstOrCreate([]);
-        dd($balance->deposit($request->value));
+        if($balance->deposit($request->value)){
+            return $balance->amount;
+        }else{
+            return 0;
+        }
     }
 
 }

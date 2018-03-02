@@ -6,6 +6,8 @@ $(document).ready(function(){
 
 const DASHBOARD_VIEW = "/admin"
 const VARIANCE_VALUE_RECHARGE = 10;
+const ALERT_ERROR = "messenger-message message alert error message-error alert-error messenger-will-hide-after messenger-hidden";
+const ALERT_SUCCESS = "messenger-message message alert success message-success alert-success messenger-will-hide-after";
 
 // INICIALIZAÇÃO DE ELEMENTOS
 
@@ -14,6 +16,9 @@ var contentView = $(".page-content");
 var baseUrl = window.location.protocol + "//" + window.location.host;
 var routeInsertedNavigator = $(location).attr("href").replace(baseUrl, '');
 var modal = $("#myModal");
+var boxNotification = $("#id_container_alert");
+var msgNotification = $("#id_msg_notificacao");
+var styleNotification = $("#id_tipo_notificacao");
 
 
 //===========================================================================================================================
@@ -41,9 +46,14 @@ function loadViews(route, method, dataType, parameters, contentElement){
     $(menuSideBar).click(function(e){
 
         var route;
+        var parent_li = $("li[parent-li='" + $(this).attr('parent-li') +"']");
+        var currentMenuActive = $("li.active[type='menu-side'");
+        
         
         $(this).attr('href') === '/' ? route = '/admin' : route = $(this).attr('href');
         history.pushState(null, null, route);
+        $(currentMenuActive).removeClass('active');
+        $(parent_li).addClass('active');
         
         route !== '' ? loadViews(route, 'GET', 'HTML', null, contentView) : false;
 
@@ -59,7 +69,7 @@ function loadViews(route, method, dataType, parameters, contentElement){
     // BOTÃO DE RECARREGAR
 
     $(".page-content").off("click","#id_btn_carregar").on("click", "#id_btn_carregar", function (e){
-        $(modal).fadeIn(200);
+        $("#myModal").fadeIn(200);
     });
 
 
@@ -67,12 +77,46 @@ function loadViews(route, method, dataType, parameters, contentElement){
 
     $(".page-content").off("click","#id_btn_modal_recarga").on("click", "#id_btn_modal_recarga", function (e){
         var valueRecharge = $("#id_value_recharge").val();
-        $(this).attr('role') === 'salvar' ? saveRecharge(valueRecharge) : $(modal).fadeOut(200);
+        $(this).attr('role') === 'salvar' ? saveRecharge(valueRecharge) : $("#myModal").fadeOut(200);
         
     });
 
     function saveRecharge(value){
-        $(modal).fadeOut(200);
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+            type: 'POST',
+            url: "./deposit",            
+            data:
+            {                
+                'value' : value
+            },
+    
+            success: function (data) {
+                
+                if(data !== 0){
+                    $("#myModal").fadeOut(200);
+                    $(styleNotification).attr('class','');
+                    $(styleNotification).addClass(ALERT_SUCCESS);
+                    $(msgNotification).html("Regarga realizada com sucesso, seu saldo agora é " + data);
+                    $(boxNotification).fadeIn(200);
+                    window.setTimeout(function () {$(boxNotification).fadeOut(200)},5000);
+                }else{
+                    $("#myModal").fadeOut(200);
+                    $(styleNotification).attr('class','');
+                    $(styleNotification).addClass(ALERT_ERROR);
+                    $(msgNotification).html("Ocorreu um erro ao recarregar seu saldo");
+                    $(boxNotification).fadeIn(200);
+                    window.setTimeout(function () {$(boxNotification).fadeOut(200)},5000);
+                }
+                
+            }
+        });
     }
 
 
@@ -89,7 +133,7 @@ function loadViews(route, method, dataType, parameters, contentElement){
     });
 
     function changeValueRecharge(value){
-        $(modal).fadeOut(200);
+        $("#myModal").fadeOut(200);
     }
 
 });

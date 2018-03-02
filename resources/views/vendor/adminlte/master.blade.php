@@ -6,6 +6,7 @@
     <title>Enoove - Fetch</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     
 	<!-- Bootstrap CSS-->
     <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
@@ -36,8 +37,8 @@
 	<script src="{{ asset('js/Chart.min.js') }}"></script>
 	<script src="{{ asset('js/charts-home.js') }}"></script>
 	<!-- Notifications-->
-	<script src="{{ asset('js/messenger.min.js') }}">   </script>
-	<script src="{{ asset('js/messenger-theme-flat.js') }}"></script>
+	<!--<script src="{{ asset('js/messenger.min.js') }}">   </script>
+	<script src="{{ asset('js/messenger-theme-flat.js') }}"></script> -->
 	<script src="{{ asset('js/home-premium.js') }}"> </script>
 	<script src="{{ asset('js/front.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
@@ -48,6 +49,24 @@
 	
 </head>
 <body>
+<ul id="id_container_alert" class="messenger messenger-fixed messenger-on-top messenger-on-right messenger-theme-flat messenger-empty">
+    <li class="messenger-message-slot">                    
+        <div class="messenger-message message alert success message-success alert-success messenger-will-hide-after" id="id_tipo_notificacao">
+            <button type="button" class="messenger-close" data-dismiss="alert">×</button>
+            <div class="messenger-message-inner" id="id_msg_notificacao">
+                
+            </div>
+            <div class="messenger-spinner">
+                <span class="messenger-spinner-side messenger-spinner-side-left">
+                    <span class="messenger-spinner-fill"></span>
+                </span>
+                <span class="messenger-spinner-side messenger-spinner-side-right">
+                    <span class="messenger-spinner-fill"></span>
+                </span>
+            </div>
+        </div>
+    </li>
+</ul>
 
 @yield('body')	
 
