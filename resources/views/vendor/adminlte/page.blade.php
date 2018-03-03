@@ -2,7 +2,7 @@
 
 @section('body')
 
-<header class="header">   
+<header class="header" style="position: fixed;width: 100%;z-index: 9999;">   
 	<nav class="navbar navbar-expand-lg">
 		<div class="search-panel">
 			<div class="search-inner d-flex align-items-center justify-content-center">
@@ -136,33 +136,33 @@
 	</nav>
 </header>
 
-<div class="d-flex align-items-stretch">
+<div class="d-flex align-items-stretch" style="top: 81px;">
       <!-- Sidebar Navigation-->
-      <nav id="sidebar">
+      <nav id="sidebar" style="position: fixed;height: 100%;top: 81px;">
         <ul class="list-unstyled">
 			<li class="active" parent-li="1" type="menu-side"><a href="{{ route('admin.home') }}" id="id_link_menu" parent-li="1"> <i class="icon-home"></i>Dashboard </a></li>
 			<li parent-li="2" type="menu-side"><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
 				<ul id="tablesDropdown" class="collapse list-unstyled ">
-					<li><a href="{{ route('admin.balance') }}" id="id_link_menu" parent-li="2">Saldo de recarga</a></li>
-					<li><a href="" id="id_link_menu" parent-li="2">Regargar</a></li>
+					<li><a href="{{ route('admin.balance') }}" id="id_link_menu" parent-li="2">Meu Saldo</a></li>
+					<li><a href="" id="id_link_menu" parent-li="2">Hist&oacute;rico de movimenta&ccedil;&otilde;es</a></li>
 				</ul>
 			</li>                
         </ul>
       </nav>
       <!-- Sidebar Navigation end-->
-      <div class="page-content">
+      <div class="page-content" id="id_page_content" style="padding-bottom: 70px;left: 280px;top: 81px;">
         
 			@yield('content')
 		
-
-        <footer class="footer">
+		</div>
+        <!--<footer class="footer">
           <div class="footer__block block no-margin-bottom">
             <div class="container-fluid text-center">
               <p class="no-margin-bottom">2018 © Your company. </p>
             </div>
           </div>
-        </footer>
-      </div>
+        </footer>-->
+      
     </div>
 @stop
 		

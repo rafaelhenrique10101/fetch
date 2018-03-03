@@ -8,11 +8,12 @@ const DASHBOARD_VIEW = "/admin"
 const VARIANCE_VALUE_RECHARGE = 10;
 const ALERT_ERROR = "messenger-message message alert error message-error alert-error messenger-will-hide-after messenger-hidden";
 const ALERT_SUCCESS = "messenger-message message alert success message-success alert-success messenger-will-hide-after";
+const ROUTE_DEPOSIT = "./deposit";
 
 // INICIALIZAÇÃO DE ELEMENTOS
 
 var menuSideBar = $("a#id_link_menu");
-var contentView = $(".page-content");
+var contentView = $("#id_page_content");
 var baseUrl = window.location.protocol + "//" + window.location.host;
 var routeInsertedNavigator = $(location).attr("href").replace(baseUrl, '');
 var modal = $("#myModal");
@@ -33,7 +34,7 @@ function loadViews(route, method, dataType, parameters, contentElement){
         dataType: dataType,
 
         success: function (value) {
-            var contentViewDashboard = $(value).find('.page-content');
+            var contentViewDashboard = $(value).find('#id_page_content');
             $(contentElement).html($(contentViewDashboard).html());                
         }
     });
@@ -68,20 +69,25 @@ function loadViews(route, method, dataType, parameters, contentElement){
 
     // BOTÃO DE RECARREGAR
 
-    $(".page-content").off("click","#id_btn_carregar").on("click", "#id_btn_carregar", function (e){
-        $("#myModal").fadeIn(200);
+    $(document).off("click","#id_btn_carregar").on("click", "#id_btn_carregar", function (e){
+        $("#myModal").show();
+
+        var teste = $("#myModal").find("button#id_btn_plus_minus_recarga");
+        var teste2 = $("#myModal").find("button#id_btn_modal_recarga");
     });
 
 
     // BOTÕES DE SALVAR E CANCELAR DO MODAL DE RECARGA
 
-    $(".page-content").off("click","#id_btn_modal_recarga").on("click", "#id_btn_modal_recarga", function (e){
-        var valueRecharge = $("#id_value_recharge").val();
-        $(this).attr('role') === 'salvar' ? saveRecharge(valueRecharge) : $("#myModal").fadeOut(200);
+    $(document).off("click","#id_btn_modal_recarga").on("click", "#id_btn_modal_recarga", function (e){
+        var valueRecharge = Number($("#id_value_recharge").val());
+        $(this).attr('role') === 'salvar' ? save(valueRecharge, ROUTE_DEPOSIT) : $("#myModal").fadeOut(200);
         
     });
 
-    function saveRecharge(value){
+    function save(params, ROUTE_DEPOSIT){
+
+        var route = '.' + routeInsertedNavigator.replace('/admin','');
 
         $.ajaxSetup({
             headers: {
@@ -91,30 +97,26 @@ function loadViews(route, method, dataType, parameters, contentElement){
 
         $.ajax({
             type: 'POST',
-            url: "./deposit",            
+            url: ROUTE_DEPOSIT,            
             data:
             {                
-                'value' : value
+                'value' : params
             },
     
             success: function (data) {
                 
-                if(data !== 0){
+                if(data.cod){
+                    
+                    var ALERT = data.cod == 0 ? ALERT_ERROR : ALERT_SUCCESS;
+
                     $("#myModal").fadeOut(200);
-                    $(styleNotification).attr('class','');
-                    $(styleNotification).addClass(ALERT_SUCCESS);
-                    $(msgNotification).html("Regarga realizada com sucesso, seu saldo agora é " + data);
-                    $(boxNotification).fadeIn(200);
+                    $(styleNotification).attr('class','').addClass(ALERT);                    
+                    $(msgNotification).html(data.msg + " seu saldo atual é R$ " + data.amount);
+                    $(boxNotification).fadeIn(200);                
+                    loadViews(route, 'GET', 'HTML', null, contentView)    
                     window.setTimeout(function () {$(boxNotification).fadeOut(200)},5000);
-                }else{
-                    $("#myModal").fadeOut(200);
-                    $(styleNotification).attr('class','');
-                    $(styleNotification).addClass(ALERT_ERROR);
-                    $(msgNotification).html("Ocorreu um erro ao recarregar seu saldo");
-                    $(boxNotification).fadeIn(200);
-                    window.setTimeout(function () {$(boxNotification).fadeOut(200)},5000);
-                }
-                
+
+                }             
             }
         });
     }
@@ -122,7 +124,7 @@ function loadViews(route, method, dataType, parameters, contentElement){
 
     // BOTÕES DE AUMENTAR E DIMINUIR VALOR DE RECARGA
 
-    $(".page-content").off("click","#id_btn_plus_minus_recarga").on("click", "#id_btn_plus_minus_recarga", function (e){
+    $(document).off("click","button#id_btn_plus_minus_recarga").on("click", "button#id_btn_plus_minus_recarga", function (e){
         
         var currentValue = Number($("#id_value_recharge").val());        
         

@@ -451,8 +451,11 @@ pre code{
     margin-right:auto;
     margin-left:auto
 }
-.padding-header-btn-actions{    
-    padding:15px;  
+.title-section-margin{
+    padding: 30px 15px 40px 30px;
+}
+.padding-header-btn-actions{
+    padding: 15px 30px;
 }
 .row{
     display:-webkit-box;
@@ -2106,7 +2109,7 @@ select.form-control:focus::-ms-value{
     -moz-user-select:none;
     -ms-user-select:none;
     user-select:none;
-    border: 2px solid rgb(134, 142, 150);
+    border: 2px solid rgba(134, 142, 150, 0.35);
     padding: 10px 15px;
     margin: 0px 0px 0px 15px;
     font-size: 16px;

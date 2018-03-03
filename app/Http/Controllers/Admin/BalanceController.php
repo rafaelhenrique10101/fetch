@@ -12,8 +12,7 @@ class BalanceController extends Controller
     {
         $balance = auth()->user()->balance;
         $amount = $balance ? $balance->amount : 0;
-        $result = [
-			'id'		=> $balance->id,
+        $result = [			
 			'amount' 	=> $amount
 		];
 
@@ -28,11 +27,19 @@ class BalanceController extends Controller
     public function depositStore(Request $request)
     {
         $balance = auth()->user()->balance()->firstOrCreate([]);
-        if($balance->deposit($request->value)){
-            return $balance->amount;
-        }else{
-            return 0;
-        }
+        
+        if($deposit = $balance->deposit($request->value)){
+            return $deposit;
+        }        
+    }
+
+    public function withdrawnStore(Request $request)
+    {
+        $balance = auth()->user()->balance()->firstOrCreate([]);
+        
+        if($result = $balance->withdrawn($request->value)){
+            return $result;
+        }        
     }
 
 }
