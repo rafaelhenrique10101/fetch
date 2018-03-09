@@ -127,6 +127,18 @@ pre{
     padding:0;
     padding-bottom:70px;
 }
+.sidebar-collapse{
+    padding-bottom: 70px;
+    left: 280px;
+    top: 81px;
+}
+@media (max-width: 1199px){
+    .sidebar-collapse{
+    padding-bottom: 70px;
+    top: 81px;
+    left: 0;
+}
+}
 .page-content.active{
     width:100%
 }

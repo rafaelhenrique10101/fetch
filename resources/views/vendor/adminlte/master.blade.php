@@ -67,6 +67,11 @@
         </div>
     </li>
 </ul>
+<div id="modal" class="modal">
+    <div class="modal-dialog">
+        
+    </div>
+</div>
 
 @yield('body')	
 

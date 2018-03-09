@@ -12,34 +12,53 @@ class BalanceController extends Controller
     {
         $balance = auth()->user()->balance;
         $amount = $balance ? $balance->amount : 0;
-        $result = [			
+        $historics = auth()->user()->historics()->get();         
+
+        $balance = [			
 			'amount' 	=> $amount
 		];
 
-        return view('admin.balance.index', compact('result'));
+        return view('admin.balance.index', compact('balance', 'historics'));
     }
 
-    public function deposit()
+    public function modal_recharge()
     {
-        return view('admin.balance.deposit');
+        return view('admin.modal.recharge');
     }
+
+    public function modal_withdraw()
+    {
+        return view('admin.modal.withdraw');
+    }
+    
 
     public function depositStore(Request $request)
     {
         $balance = auth()->user()->balance()->firstOrCreate([]);
         
-        if($deposit = $balance->deposit($request->value)){
+        if($deposit = $balance->deposit($request->value))
+        {
             return $deposit;
         }        
     }
 
-    public function withdrawnStore(Request $request)
+
+    public function withdrawStore(Request $request)
     {
         $balance = auth()->user()->balance()->firstOrCreate([]);
         
-        if($result = $balance->withdrawn($request->value)){
-            return $result;
+        if($withdraw = $balance->withdraw($request->value))
+        {
+            return $withdraw;
         }        
+    }
+
+    public function historic(): Array
+    {
+        if($historics = auth()->user()->historics()->get())
+        {
+            return $historics;
+        }
     }
 
 }

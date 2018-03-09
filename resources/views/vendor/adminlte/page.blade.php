@@ -144,13 +144,13 @@
 			<li parent-li="2" type="menu-side"><a href="#tablesDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-grid"></i>Financeiro </a>
 				<ul id="tablesDropdown" class="collapse list-unstyled ">
 					<li><a href="{{ route('admin.balance') }}" id="id_link_menu" parent-li="2">Meu Saldo</a></li>
-					<li><a href="" id="id_link_menu" parent-li="2">Hist&oacute;rico de movimenta&ccedil;&otilde;es</a></li>
+					<li><a href="" id="id_link_menu" parent-li="2">Historico</a></li>
 				</ul>
 			</li>                
         </ul>
       </nav>
       <!-- Sidebar Navigation end-->
-      <div class="page-content" id="id_page_content" style="padding-bottom: 70px;left: 280px;top: 81px;">
+      <div class="page-content sidebar-collapse" id="id_page_content">
         
 			@yield('content')
 		
