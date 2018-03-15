@@ -13,7 +13,7 @@ class AdminController extends Controller
 		$balance = auth()->user()->balance;
         $amount = $balance ? $balance->amount : 0;
 		$result = [
-			'id'		=> $balance->id,
+			'id'		=> $balance->id ? $balance->id : 0,
 			'amount' 	=> $amount
 		];
 		
